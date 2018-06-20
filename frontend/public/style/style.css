@@ -44,6 +44,20 @@ html, body {
   height : 100%;
 }
 
+.one-pok-top {
+  display: flex;
+  justify-content: center;
+  background-color: #b7bbff;
+  color: #ffffff;
+}
+
+.one-pok-top .box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #b7bbff;
+}
+
 .poks-grid {
   max-width: 88vw;
   display         : flex;
@@ -101,6 +115,9 @@ html, body {
   font-size: 55px;
   text-align: center;
 }
+
+
+
 
 .rotating {
   animation: rotating 1s linear infinite;
