@@ -1,9 +1,14 @@
 import _ from 'lodash';
+import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class AllPokemonIndex extends Component {
+  componentDidMount() {
+    axios.post();
+  }
+
   renderHelper() {
     return _.map(this.props.allPokemon, (pok, i) => (
       <Link key={i} to={`pokemon/${pok.name}`}>

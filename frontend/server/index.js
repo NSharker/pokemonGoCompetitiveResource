@@ -3,10 +3,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { resolve } = require('path');
+const router = require('./router');
 
 app.use('/public', express.static('public'))
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
+  .use('/api', router);
 
 // send index.html
 app.get('/*', (req, res) => {
