@@ -66,7 +66,7 @@ Pokemon.create({
 
 
 Pokemon.create({
-	dex: "246",
+	dex: "248",
 	name: "tyranitar",
 	description: "Its body can’t be harmed by any sort of attack, so it is very eager to make challenges against enemies.",
 	maxcp: "3670",
