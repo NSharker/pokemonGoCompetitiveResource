@@ -99,3 +99,13 @@ Pokemon.create({
 	stamina: "210",
 	types:  "dragon,flying"
 })
+
+10.times do
+	content = Faker::Lorem.sentence(5)
+	sentiment = ["good", "bad", "neutral"]
+	all_pokemon = Pokemon.take(9)
+
+	all_pokemon.each { |pokemon|
+		author = Faker::StarWars.character
+		pokemon.comments.create!(content: content, sentiment: sentiment.sample, author: author)}
+end
