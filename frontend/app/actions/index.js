@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 // action types
 export const GET_ALL_POKEMON = 'GET_ALL_POKEMON';
@@ -15,10 +15,16 @@ export const getOnePokemon = pok => ({
   payload: pok,
 });
 
-/* thunks
-export const getTheName = () => dispatch => (
-  axios.get('/api')
-    .then(res => dispatch(gotName(res.data)))
+// thunks
+export const sendComment = commentObject => dispatch => (
+  // console.log(commentObject.content)
+  axios.post('/api', {
+    text: commentObject.content,
+  })
+    .then(res => console.log(res.data))
     .catch(err => console.error(err))
+  // axios.post('/api')
+  //   .then(res => dispatch(getOnePokemon(res.data)))
+  //   .catch(err => console.error(err))
 );
-*/
+
