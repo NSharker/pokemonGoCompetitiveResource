@@ -101,7 +101,7 @@ Pokemon.create({
 })
 
 10.times do
-	sentiment = ["good", "bad", "neutral"]
+	sentiment = ["+", "-", "~"]
 	all_pokemon = Pokemon.take(9)
 
 	all_pokemon.each { |pokemon|
