@@ -66,7 +66,7 @@ Pokemon.create({
 
 
 Pokemon.create({
-	dex: "246",
+	dex: "248",
 	name: "tyranitar",
 	description: "Its body can’t be harmed by any sort of attack, so it is very eager to make challenges against enemies.",
 	maxcp: "3670",
@@ -99,3 +99,13 @@ Pokemon.create({
 	stamina: "210",
 	types:  "dragon,flying"
 })
+
+10.times do
+	sentiment = ["+", "-", "~"]
+	all_pokemon = Pokemon.take(9)
+
+	all_pokemon.each { |pokemon|
+		content = Faker::GameOfThrones.quote
+		author = Faker::StarWars.character
+		pokemon.comments.create!(content: content, sentiment: sentiment.sample, author: author)}
+end

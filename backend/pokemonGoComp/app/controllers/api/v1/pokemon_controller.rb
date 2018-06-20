@@ -11,7 +11,8 @@ module Api
 				if pokemon.nil?
 					render json: {data:nil}, status: :unprocessable_entity
 				else
-					render json: {data:pokemon}, status: :ok
+					comments = pokemon.comments
+					render json: {data:pokemon, comments: comments}, status: :ok
 				end
 			end
 		end

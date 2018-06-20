@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180619155814) do
+ActiveRecord::Schema.define(version: 20180620145923) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "author"
+    t.text "content"
+    t.string "sentiment"
+    t.integer "pokemon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pokemon_id", "created_at"], name: "index_comments_on_pokemon_id_and_created_at"
+    t.index ["pokemon_id"], name: "index_comments_on_pokemon_id"
+  end
 
   create_table "pokemon", force: :cascade do |t|
     t.string "dex"
