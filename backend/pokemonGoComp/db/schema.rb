@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180619155814) do
 
-  create_table "pokemons", force: :cascade do |t|
+  create_table "pokemon", force: :cascade do |t|
     t.string "dex"
     t.string "name"
     t.text "description"

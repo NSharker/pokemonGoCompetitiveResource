@@ -1,6 +1,6 @@
-class CreatePokemons < ActiveRecord::Migration[5.1]
+class CreatePokemon < ActiveRecord::Migration[5.1]
   def change
-    create_table :pokemons do |t|
+    create_table :pokemon do |t|
       t.string :dex
       t.string :name
       t.text :description

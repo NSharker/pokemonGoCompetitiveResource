@@ -1,9 +1,9 @@
 module Api
 	module V1
-		class PokemonsController < ApplicationController
+		class PokemonController < ApplicationController
 			def index
-				pokemons = Pokemon.all;
-				render json: {data: pokemons}, status: :ok
+				pokemon = Pokemon.all;
+				render json: {data: pokemon}, status: :ok
 			end	
 
 			def show
