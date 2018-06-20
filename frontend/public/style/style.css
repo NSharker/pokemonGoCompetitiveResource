@@ -44,6 +44,11 @@ html, body {
   height : 100%;
 }
 
+.one-pok-main {
+  display: flex;
+  flex-direction: column;
+}
+
 .one-pok-top {
   display: flex;
   justify-content: center;
