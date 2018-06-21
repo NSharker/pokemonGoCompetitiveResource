@@ -15,6 +15,8 @@
         "components": [ "Link" ],
         "specialLink": [ "to" ]
       }],
+      "class-methods-use-this": [1],
+      "jsx-a11y/label-has-for": [1],
     },
     "extends": ["airbnb"],
     "globals": {

@@ -11,7 +11,7 @@ class AllPokemonIndex extends Component {
 
   renderHelper() {
     return _.map(this.props.allPokemon, (pok, i) => (
-      <Link key={i} to={`pokemon/${pok.name}`}>
+      <Link key={i} to={`pokemon/${pok.dex}`}>
         <div>
           <div className="poks square" >
             <img className="pok img other-bg" src={`/public/images/${pok.name}.png`} alt="logo" />

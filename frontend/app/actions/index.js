@@ -16,13 +16,24 @@ export const getOnePokemon = pok => ({
 });
 
 // thunks
-export const sendComment = commentObject => dispatch => (
-  // console.log(commentObject.content)
-  axios.post('/api', {
+export const sendComment = (commentObject, callback) => dispatch => (
+  axios.post('/sentiment', {
     text: commentObject.content,
   })
+    .then((res) => {
+      callback();
+      return res.data;
+    })
+    .then((data) => {
+      const postThis = {};
+      postThis.author = commentObject.author;
+      postThis.content = commentObject.content;
+      postThis.sentiment = data.sentiment;
+      return axios.post('/sentiment/lol', postThis);
+    })
     .then(res => console.log(res.data))
     .catch(err => console.error(err))
+
   // axios.post('/api')
   //   .then(res => dispatch(getOnePokemon(res.data)))
   //   .catch(err => console.error(err))
