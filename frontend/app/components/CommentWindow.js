@@ -8,6 +8,8 @@ class CommentWindow extends Component {
     console.log('VALUES', values);
     // add anonymous name if necessary
     const finalValues = {};
+    finalValues.dex = this.props.thePokemon.dex;
+    finalValues.pokemon_id = this.props.thePokemon.id;
     finalValues.content = values.content;
     finalValues.author = !values.author ? 'Anonymous' : values.author;
     this.props.sendComment(finalValues, () => this.props.reset());
@@ -60,6 +62,8 @@ class CommentWindow extends Component {
   }
 }
 
+const mapStateToProps = ({ thePokemon }) => ({ thePokemon });
+
 const validateInput = (values) => {
   const errors = {};
   if (!values.content) {
@@ -72,4 +76,4 @@ const validateInput = (values) => {
 export default reduxForm({
   validate: validateInput,
   form: 'PokemonCommentForm',
-})(connect(null, { sendComment })(CommentWindow));
+})(connect(mapStateToProps, { sendComment })(CommentWindow));
