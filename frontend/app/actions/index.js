@@ -48,7 +48,7 @@ export const sendComment = (commentObject, callback) => dispatch => (
     text: commentObject.content,
   })
     .then((res) => {
-      callback();
+      callback(); // clears input fields
       return res.data;
     })
     .then((data) => {
@@ -56,10 +56,10 @@ export const sendComment = (commentObject, callback) => dispatch => (
       postThis.author = commentObject.author;
       postThis.content = commentObject.content;
       postThis.sentiment = data.sentiment;
-      postThis.pokemon_id = 2;
+      postThis.pokemon_id = commentObject.pokemon_id;
       return axios.post('http://146.95.217.241:3000/api/v1/comments', postThis);
     })
-    .then(res => console.log(res.data))
+    .then(() => dispatch(loadOnePokemon(commentObject.dex)))
     .catch(err => console.error(err))
 );
 
