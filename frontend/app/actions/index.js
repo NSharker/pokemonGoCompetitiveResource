@@ -35,7 +35,8 @@ export const sendComment = (commentObject, callback) => dispatch => (
       postThis.author = commentObject.author;
       postThis.content = commentObject.content;
       postThis.sentiment = data.sentiment;
-      return axios.post('/sentiment/lol', postThis);
+      postThis.pokemon_id = 2;
+      return axios.post('http://146.95.217.241:3000/api/v1/comments', postThis);
     })
     .then(res => console.log(res.data))
     .catch(err => console.error(err))
