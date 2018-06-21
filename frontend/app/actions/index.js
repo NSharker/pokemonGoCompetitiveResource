@@ -3,16 +3,22 @@ import axios from 'axios';
 // action types
 export const GET_ALL_POKEMON = 'GET_ALL_POKEMON';
 export const GET_ONE_POK_INFO = 'GET_ONE_POK_INFO';
+export const GET_COMMENTS = 'GET_COMMENTS';
 
 // action creators
-export const getAllPokemon = pokArray => ({
+export const updateAllPokemon = pokArray => ({
   type: GET_ALL_POKEMON,
   payload: pokArray,
 });
 
-export const getOnePokemon = pok => ({
+export const updateOnePokemon = pok => ({
   type: GET_ONE_POK_INFO,
   payload: pok,
+});
+
+export const updateComments = comments => ({
+  type: GET_COMMENTS,
+  payload: comments,
 });
 
 // thunks
