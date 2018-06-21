@@ -122,7 +122,17 @@ html, body {
   text-align: center;
 }
 
+.positive {
+  background-color: green;
+}
 
+.negative {
+  background-color: red;
+}
+
+.neutral {
+  background-color: grey;
+}
 
 
 .rotating {
