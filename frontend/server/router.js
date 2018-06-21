@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
 
 router.post('/lol', (req, res) => {
   console.log(`Author: ${req.body.author}`);
-  res.send('lol');
+  res.json(req.body);
 });
 
 
