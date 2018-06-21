@@ -47,6 +47,7 @@ html, body {
 .one-pok-main {
   display: flex;
   flex-direction: column;
+  color: #ffffff;
 }
 
 .one-pok-top {

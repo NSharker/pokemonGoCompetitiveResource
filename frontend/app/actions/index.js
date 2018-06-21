@@ -17,8 +17,7 @@ export const getOnePokemon = pok => ({
 
 // thunks
 export const sendComment = (commentObject, callback) => dispatch => (
-  // console.log(commentObject.content)
-  axios.post('/api', {
+  axios.post('/sentiment', {
     text: commentObject.content,
   })
     .then(res => console.log(res.data))

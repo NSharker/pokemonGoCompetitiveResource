@@ -6,8 +6,21 @@ import { sendComment } from '../actions';
 class CommentWindow extends Component {
   onSubmit(values) {
     console.log('VALUES', values);
-    // const { resetForm } = this.props;
-    this.props.sendComment(values, () => this.props.reset());
+    // add anonymous name if necessary
+    const finalValues = {};
+    finalValues.content = values.content;
+    finalValues.author = !values.author ? 'Anonymous' : values.author;
+    this.props.sendComment(finalValues, () => this.props.reset());
+  }
+
+  renderArea(field) {
+    return (
+      <div>
+        <input {...field.input} type="textarea" />
+        {field.meta.touched && field.meta.error &&
+        <span className="other-bg">{field.meta.error}</span>}
+      </div>
+    );
   }
 
   render() {
@@ -15,17 +28,26 @@ class CommentWindow extends Component {
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div>
-          <Field
-            name="author"
-            component="input"
-          />
+          <label>Your Name</label>
+          <div>
+            <Field
+              name="author"
+              component="input"
+              placeholder="Enter Name (or stay Anonymous)"
+            />
+          </div>
         </div>
 
         <div>
-          <Field
-            name="content"
-            component="textarea"
-          />
+          <label>Comment</label>
+          <div>
+            <Field
+              name="content"
+              className="other-bg"
+              component={this.renderArea}
+              placeholder="Write something"
+            />
+          </div>
         </div>
 
         <div>
