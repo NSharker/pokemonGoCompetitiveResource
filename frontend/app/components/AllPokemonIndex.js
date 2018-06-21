@@ -3,10 +3,11 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { loadAllPokemon } from '../actions';
 
 class AllPokemonIndex extends Component {
   componentDidMount() {
-    axios.post();
+    this.props.loadAllPokemon();
   }
 
   renderHelper() {
@@ -14,7 +15,7 @@ class AllPokemonIndex extends Component {
       <Link key={i} to={`pokemon/${pok.dex}`}>
         <div>
           <div className="poks square" >
-            <img className="pok img other-bg" src={`/public/images/${pok.name}.png`} alt="logo" />
+            <img className="pok img other-bg" src={`/public/images/${pok.dex}.png`} alt="logo" />
           </div>
           <div className="poks label">#{pok.dex} {pok.name}</div>
         </div>
@@ -35,6 +36,6 @@ class AllPokemonIndex extends Component {
 
 const mapStateToProps = ({ allPokemon }) => ({ allPokemon });
 
-export default connect(mapStateToProps)(AllPokemonIndex);
+export default connect(mapStateToProps, { loadAllPokemon })(AllPokemonIndex);
 
 // <img className="rotating center" src="/public/images/ball.png" alt="ball" />
