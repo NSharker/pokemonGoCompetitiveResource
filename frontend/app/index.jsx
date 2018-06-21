@@ -8,7 +8,7 @@ import store from './store';
 import '../public/style/style.css';
 import AllPokemonIndex from './components/AllPokemonIndex';
 import Header from './components/Header';
-import OnePokemon from './components/OnePokemon';
+import OnePokemonShow from './components/OnePokemonShow';
 
 
 ReactDOM.render(
@@ -17,7 +17,7 @@ ReactDOM.render(
       <div className="page">
         <Header />
         <Switch>
-          <Route path="/pokemon/:name" component={OnePokemon} />
+          <Route path="/pokemon/:dex" component={OnePokemonShow} />
           <Route path="/" component={AllPokemonIndex} />
         </Switch>
       </div>

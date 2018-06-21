@@ -16,12 +16,13 @@ export const getOnePokemon = pok => ({
 });
 
 // thunks
-export const sendComment = commentObject => dispatch => (
+export const sendComment = (commentObject, callback) => dispatch => (
   // console.log(commentObject.content)
   axios.post('/api', {
     text: commentObject.content,
   })
     .then(res => console.log(res.data))
+    .then(() => callback())
     .catch(err => console.error(err))
   // axios.post('/api')
   //   .then(res => dispatch(getOnePokemon(res.data)))
