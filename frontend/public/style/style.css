@@ -14,6 +14,12 @@ html, body {
   padding: 0px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
 #root {
   height: 100%;
 }
@@ -123,15 +129,15 @@ html, body {
 }
 
 .positive {
-  background-color: green;
+  background-color: #1fb58f;
 }
 
 .negative {
-  background-color: red;
+  background-color: #fa7c92;
 }
 
 .neutral {
-  background-color: grey;
+  background-color: #a9b7c0;
 }
 
 
