@@ -47,7 +47,7 @@ class CommentWindow extends Component {
     const { isLoading } = this.state;
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="bottom-space">
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="wid pad big-bottom-space other-bg">
         <FormGroup controlId="formControlsInput">
           <ControlLabel>Your Name</ControlLabel>
           <div>
@@ -70,7 +70,14 @@ class CommentWindow extends Component {
         </FormGroup>
 
         <div>
-          <Button bsStyle="primary" bsSize="large" type="submit" disabled={isLoading}>
+          <style type="text/css">{`
+            .btn-custom {
+              background-color: #7877e7;
+              color: white;
+            }
+          `}
+          </style>
+          <Button bsStyle="custom" bsSize="large" type="submit" disabled={isLoading}>
             {isLoading ? 'Posting your comment...' : 'Submit'}
           </Button>
         </div>

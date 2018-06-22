@@ -14,9 +14,9 @@ class AllPokemonIndex extends Component {
       <Link key={i} to={`pokemon/${pok.dex}`}>
         <div>
           <div className="poks square" >
-            <img className="pok img other-bg" src={`/public/images/${pok.dex}.png`} alt="logo" />
+            <img className="other-bg" src={`/public/images/${pok.dex}.png`} alt="logo" />
           </div>
-          <div className="poks label">#{pok.dex} {pok.name}</div>
+          <div className="poks lab lil-f">#{pok.dex} {pok.name}</div>
         </div>
       </Link>
     ));

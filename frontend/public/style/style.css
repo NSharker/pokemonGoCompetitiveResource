@@ -1,6 +1,6 @@
 * {
-  box-sizing : border-box;
-  font-family: "Lato", sans-serif;
+  /*box-sizing : border-box;*/
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .basic-color {
@@ -39,7 +39,7 @@ textarea {
   align-items: center;
   font-size: 5vw;
   color: #ffffff;
-  height: 208px;
+  /*height: 208px;*/
   line-height: 15vw;
 }
 
@@ -76,7 +76,7 @@ textarea {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #b7bbff;
+  /*background-color: #b7bbff;*/
 }
 
 .poks-grid {
@@ -107,7 +107,8 @@ textarea {
     flex-direction: row;
     width   : 25vw;
     height  : 25vw;
-    border  : 1px solid #000000;
+    box-sizing : border-box;
+    border  : 1px solid #ffffff;
     background-color: #b7bbff;
     margin: 2vw 2vw 0vw 2vw;
 
@@ -120,16 +121,13 @@ textarea {
     /*padding     : 16px;*/
 }
 
-.poks .label {
-  border  : 1px solid #000000;
-  background-color: #ffffff;
+.poks .lab {
+  border  : 1px solid #ffffff;
   width   : 25vw;
   margin: 0vw 2vw 2vw 2vw;
   border-top: none;
-}
-
-.pok .img {
-  object-fit: contain;
+  border-radius: none;
+  height: 2vw;
 }
 
 .big {
@@ -137,8 +135,59 @@ textarea {
   text-align: center;
 }
 
+.mid-f {
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.lil-f{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.reg-c{
+  color: #d6d6d6;
+  font-weight: 400;
+}
+
 .bottom-space {
   margin-bottom: 10px;
+}
+
+.big-top-space {
+  margin-top: 20px;
+}
+
+.big-bottom-space {
+  margin-bottom: 20px;
+}
+
+.pad {
+  padding: 10px 15px;
+
+}
+
+.wid {
+  width: 90vw;
+}
+
+.center_image {
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .positive {

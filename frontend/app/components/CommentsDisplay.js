@@ -24,7 +24,7 @@ class CommentsDisplay extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wid">
         <ListGroup>
           {this.renderHelper()}
         </ListGroup>
