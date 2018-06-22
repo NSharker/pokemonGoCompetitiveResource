@@ -1,12 +1,14 @@
 import { GET_COMMENTS } from '../actions';
 
-const initialState = [{ author: 'Nikki', content: 'so awesome!', sentiment: '+' },
-  { author: 'NotNikki', content: 'this totally sux...', sentiment: '-' },
-  { author: 'Anonymous', content: 'meh', sentiment: '~' },
-  { author: 'Nikki', content: 'so awesome!', sentiment: '-' },
-  { author: 'NotNikki', content: 'this totally sux...', sentiment: '~' },
-  { author: 'Anonymous', content: 'meh', sentiment: '+' },
-];
+// const initialState = [{ author: 'Nikki', content: 'so awesome!', sentiment: '+' },
+//   { author: 'NotNikki', content: 'this totally sux...', sentiment: '-' },
+//   { author: 'Anonymous', content: 'meh', sentiment: '~' },
+//   { author: 'Nikki', content: 'so awesome!', sentiment: '-' },
+//   { author: 'NotNikki', content: 'this totally sux...', sentiment: '~' },
+//   { author: 'Anonymous', content: 'meh', sentiment: '+' },
+// ];
+
+const initialState = [];
 
 export default (state = initialState, action) => {
   switch (action.type) {

@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -38,4 +37,3 @@ const mapStateToProps = ({ allPokemon }) => ({ allPokemon });
 
 export default connect(mapStateToProps, { loadAllPokemon })(AllPokemonIndex);
 
-// <img className="rotating center" src="/public/images/ball.png" alt="ball" />

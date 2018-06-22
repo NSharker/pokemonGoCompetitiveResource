@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Image } from 'react-bootstrap';
 
 const OnePokemonInfo = ({ thePokemon }) => (
   <div className="one-pok-top">
     <div className="one-pok-top box">
-      <img className="other-bg" src={`/public/images/${thePokemon.dex}.png`} alt="logo" />
+      <Image src={`/public/images/${thePokemon.dex}.png`} alt="logo" responsive />
       <div>
         <div className="other-bg"> #{thePokemon.dex} {thePokemon.name} </div>
         <div className="other-bg"> Max CP: {thePokemon.maxcp} </div>
