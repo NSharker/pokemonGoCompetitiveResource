@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class CommentsDisplay extends Component {
   renderHelper() {
@@ -13,16 +14,20 @@ class CommentsDisplay extends Component {
       } else if (com.sentiment === '~') {
         className = 'neutral';
       }
-      return <li key={i} className={className}>{com.content} author:{com.author}</li>;
+      return (
+        <ListGroupItem header={com.content} key={i} className={`bottom-space ${className}`}>
+           by {com.author}
+        </ListGroupItem>
+      );
     });
   }
 
   render() {
     return (
       <div>
-        <ul>
+        <ListGroup>
           {this.renderHelper()}
-        </ul>
+        </ListGroup>
       </div>
     );
   }

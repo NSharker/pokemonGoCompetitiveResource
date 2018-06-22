@@ -1,6 +1,9 @@
 * {
   box-sizing : border-box;
   font-family: "Lato", sans-serif;
+}
+
+.basic-color {
   background-color: #8e8deb;
 }
 /*#8e8deb;*/
@@ -12,6 +15,7 @@ html, body {
   height : 100%;
   margin: 0px;
   padding: 0px;
+  background-color: #8e8deb;
 }
 
 ul {
@@ -51,6 +55,7 @@ textarea {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  /*background-color: #8e8deb;*/
  /* height : 100%;*/
 }
 
@@ -63,7 +68,7 @@ textarea {
 .one-pok-top {
   display: flex;
   justify-content: center;
-  background-color: #b7bbff;
+  /*background-color: #b7bbff;*/
   color: #ffffff;
 }
 
@@ -93,7 +98,7 @@ textarea {
 
   width   : 88vw;
   padding : 0px;
-  border  : 1px solid #000000;
+  /*border  : 1px solid #000000;*/
 }
 
 .poks .square {
@@ -130,6 +135,10 @@ textarea {
 .big {
   font-size: 55px;
   text-align: center;
+}
+
+.bottom-space {
+  margin-bottom: 10px;
 }
 
 .positive {

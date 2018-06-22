@@ -47,7 +47,7 @@ class CommentWindow extends Component {
     const { isLoading } = this.state;
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="bottom-space">
         <FormGroup controlId="formControlsInput">
           <ControlLabel>Your Name</ControlLabel>
           <div>
