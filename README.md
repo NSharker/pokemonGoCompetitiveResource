@@ -3,15 +3,11 @@
 ## This website will allow users to discuss pokemon stats and competitiveness in an organized fashion.
 
 
-## License
-
-
-
 ## Getting started
 
 To run the Frontend visit:
 
-
+[Frontend README](frontend/README.md)
 
 
 To run the backend API visit: 
