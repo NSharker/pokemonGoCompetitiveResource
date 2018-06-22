@@ -1,6 +1,6 @@
 # PokemonGo Competitive Resource
 ![Pokemon Go Competitive Resource Logo](readme_images/pogoLogo.png)
-This website will allow users to discuss pokemon stats and competitiveness
+## This website will allow users to discuss pokemon stats and competitiveness
 in an organized fashion.
 
 
@@ -9,6 +9,9 @@ in an organized fashion.
 
 
 ## Getting started
+
+To run the Frontend visit:
+
 
 
 
