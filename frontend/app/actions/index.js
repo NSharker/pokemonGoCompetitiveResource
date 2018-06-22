@@ -3,6 +3,7 @@ import axios from 'axios';
 // action types
 export const GET_ALL_POKEMON = 'GET_ALL_POKEMON';
 export const GET_ONE_POK_INFO = 'GET_ONE_POK_INFO';
+export const CLEAR_ONE_POKEMON = 'CLEAR_ONE_POKEMON';
 export const GET_COMMENTS = 'GET_COMMENTS';
 export const CREATE_COMMENT = 'CREATE_COMMENT';
 
@@ -24,6 +25,10 @@ export const getComments = comments => ({
 
 export const createComment = () => ({
   type: CREATE_COMMENT,
+});
+
+export const clearOnePokemon = () => ({
+  type: CLEAR_ONE_POKEMON,
 });
 
 // thunks

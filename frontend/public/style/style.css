@@ -11,6 +11,15 @@
   background-color: #b7bbff;
 }
 
+.instr {
+  color: #ffffff;
+  width:100%;
+  font-size: 2.7vw;
+  text-align: right;
+  font-weight: 300;
+  margin-right: 18vw;
+}
+
 html, body {
   height : 100%;
   margin: 0px;
@@ -55,6 +64,7 @@ textarea {
   /*line-height: 15vw;*/
   width: 100%;
   /*margin-left: 0.5vw;*/
+  /*margin-bottom: 10px;*/
 }
 
 .rrow .head {

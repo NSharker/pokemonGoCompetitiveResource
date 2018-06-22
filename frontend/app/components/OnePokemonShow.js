@@ -3,13 +3,16 @@ import { connect } from 'react-redux';
 import CommentWindow from './CommentWindow';
 import OnePokemonInfo from './OnePokemonInfo';
 import CommentsDisplay from './CommentsDisplay';
-import { loadOnePokemon } from '../actions';
+import { loadOnePokemon, clearOnePokemon } from '../actions';
 
 
 class OnePokemonShow extends Component {
   componentDidMount() {
     const { dex } = this.props.match.params;
     this.props.loadOnePokemon(dex);
+  }
+  componentWillUnmount() {
+    this.props.clearOnePokemon();
   }
 
   render() {
@@ -23,5 +26,5 @@ class OnePokemonShow extends Component {
   }
 }
 
-export default connect(null, { loadOnePokemon })(OnePokemonShow);
+export default connect(null, { loadOnePokemon, clearOnePokemon })(OnePokemonShow);
 
