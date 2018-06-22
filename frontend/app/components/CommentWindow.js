@@ -1,61 +1,85 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
+import { Button, FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
 import { sendComment } from '../actions';
 
 class CommentWindow extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false,
+    };
+  }
+
   onSubmit(values) {
-    console.log('VALUES', values);
-    // add anonymous name if necessary
+    this.setState({ isLoading: true });
     const finalValues = {};
     finalValues.dex = this.props.thePokemon.dex;
     finalValues.pokemon_id = this.props.thePokemon.id;
     finalValues.content = values.content;
     finalValues.author = !values.author ? 'Anonymous' : values.author;
-    this.props.sendComment(finalValues, () => this.props.reset());
+    this.props.sendComment(finalValues, () => {
+      this.props.reset();
+      this.setState({ isLoading: false });
+    });
+  }
+
+  renderInput(field) {
+    return (
+      <div>
+        <FormControl {...field.input} type="text" placeholder="Enter Name (or stay Anonymous)" />
+      </div>
+    );
   }
 
   renderArea(field) {
     return (
       <div>
-        <input {...field.input} type="textarea" />
+        <FormControl {...field.input} componentClass="textarea" type="textarea" placeholder="Write something" />
         {field.meta.touched && field.meta.error &&
-        <span className="other-bg">{field.meta.error}</span>}
+        <HelpBlock bsStyle="danger">{field.meta.error}</HelpBlock>}
       </div>
     );
   }
 
   render() {
+    const { isLoading } = this.state;
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <div>
-          <label>Your Name</label>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="wid pad big-bottom-space other-bg">
+        <FormGroup controlId="formControlsInput">
+          <ControlLabel>Your Name</ControlLabel>
           <div>
             <Field
               name="author"
-              component="input"
-              placeholder="Enter Name (or stay Anonymous)"
+              component={this.renderInput}
             />
           </div>
-        </div>
+        </FormGroup>
 
-        <div>
-          <label>Comment</label>
+        <FormGroup controlId="formControlsTextarea">
+          <ControlLabel>Comment</ControlLabel>
           <div>
             <Field
               name="content"
               className="other-bg"
               component={this.renderArea}
-              placeholder="Write something"
             />
           </div>
-        </div>
+        </FormGroup>
 
         <div>
-          <button type="submit" >
-            Submit
-          </button>
+          <style type="text/css">{`
+            .btn-custom {
+              background-color: #7877e7;
+              color: white;
+            }
+          `}
+          </style>
+          <Button bsStyle="custom" bsSize="large" type="submit" disabled={isLoading}>
+            {isLoading ? 'Posting your comment...' : 'Submit'}
+          </Button>
         </div>
       </form>
     );
