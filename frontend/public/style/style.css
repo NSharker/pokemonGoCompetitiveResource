@@ -1,6 +1,6 @@
 * {
   /*box-sizing : border-box;*/
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Latto","Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .basic-color {
@@ -48,17 +48,22 @@ textarea {
   /*flex-direction: row;*/
   justify-content: space-around;
   align-items: center;
-  font-size: 5vw;
+  font-size: 5.5vw;
+  font-weight: 500;
   color: #ffffff;
   /*height: 208px;*/
-  line-height: 15vw;
+  /*line-height: 15vw;*/
+  width: 100%;
+  /*margin-left: 0.5vw;*/
 }
 
 .rrow .head {
-  object-fit: scale-down;
-  overflow: inherit;
-  width: 20vw;
-  padding-right: 20px;
+  /*object-fit: scale-down;
+  overflow: inherit;*/
+  width: 30vw;
+  /*height: 15vw;*/
+  /*padding-right: 20px;*/
+
 }
 
 .page {
