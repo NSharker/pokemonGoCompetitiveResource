@@ -28,13 +28,13 @@ export const createComment = () => ({
 
 // thunks
 export const loadAllPokemon = () => dispatch => (
-  axios.get('http://146.95.217.241:3000/api/v1/pokemon')
+  axios.get('https://fierce-waters-99874.herokuapp.com/api/v1/pokemon')
     .then(res => dispatch(getAllPokemon(res.data.data)))
     .catch(err => console.error(err))
 );
 
 export const loadOnePokemon = dex => dispatch => (
-  axios.get(`http://146.95.217.241:3000/api/v1/pokemon/${dex}`)
+  axios.get(`https://fierce-waters-99874.herokuapp.com/api/v1/pokemon/${dex}`)
     .then((res) => {
       dispatch(getOnePokemon(res.data.data));
       return res;
@@ -57,7 +57,7 @@ export const sendComment = (commentObject, callback) => dispatch => (
       postThis.content = commentObject.content;
       postThis.sentiment = data.sentiment;
       postThis.pokemon_id = commentObject.pokemon_id;
-      return axios.post('http://146.95.217.241:3000/api/v1/comments', postThis);
+      return axios.post('https://fierce-waters-99874.herokuapp.com/api/v1/comments', postThis);
     })
     .then(() => dispatch(loadOnePokemon(commentObject.dex)))
     .catch(err => console.error(err))
